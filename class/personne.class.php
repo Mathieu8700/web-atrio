@@ -23,11 +23,20 @@ else:
 	
 endif;
 
+if(!$erreur):
+
 //si nous n'avons pas d'erreur ont enregistre en base
 $db->add(array('nom' => $nom,'prenom' => $prenom,'naissance' => $date),'Personne');	
 
 //pour ne pas poster plusieurs fois le formulaires
 $_SESSION['envoi'] = 1;
+
+else:
+	
+return $erreur;	
+
+endif;
+
 
 	
 								 }
